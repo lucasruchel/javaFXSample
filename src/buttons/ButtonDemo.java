@@ -1,6 +1,8 @@
 package buttons;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -9,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -25,7 +28,7 @@ public class ButtonDemo extends Application {
 	
 	public ButtonDemo() {
 		createGUI();
-	//	makeEvents();
+		makeEvents();
 	}
 	private void createGUI() {
 		createControls();
@@ -85,6 +88,33 @@ public class ButtonDemo extends Application {
 		Group root = new Group();
 		root.getChildren().add(vbox);
 		scene = new Scene(root, 300, 100);
+	}
+	private void makeEvents() {
+		final String accepted = "Accepted";
+		bAccept0.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent arg0) {
+				label.setText(accepted);
+				
+			}
+		});
+		
+		bAccept1.setOnAction(e->{label.setText(accepted);});
+		bAccept2.setOnAction(e->{label.setText(accepted);});
+		
+		String declined = "Declined";
+		bDecline0.setOnAction(e->{label.setText(declined);});
+		bDecline1.setOnAction(e->{label.setText(declined);});
+		
+		bAccept0.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent arg0) {
+				bAccept0.setEffect(shadow);
+				
+			}
+		});
+
 	}
 	@Override
 	public void start(Stage stage) throws Exception {
