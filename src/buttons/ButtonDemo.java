@@ -79,7 +79,7 @@ public class ButtonDemo extends Application {
 		
 		hbox = new HBox();
 		vbox.getChildren().add(hbox);
-		hbox.getChildren().addAll(bAccept2,bAccept1);
+		hbox.getChildren().addAll(bAccept2,bDecline1);
 		hbox.setSpacing(30);
 		
 		Group root = new Group();
