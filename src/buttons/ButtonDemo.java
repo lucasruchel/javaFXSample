@@ -114,6 +114,12 @@ public class ButtonDemo extends Application {
 				
 			}
 		});
+		bAccept0.setOnMouseExited(e->{bAccept0.setEffect(null);});
+		
+		EventHandler<MouseEvent> eh = (MouseEvent e)->{bAccept1.setEffect(shadow);};
+		
+		bAccept1.addEventHandler(MouseEvent.MOUSE_ENTERED, eh);
+		bAccept1.setOnMouseExited(e->{bAccept1.setEffect(null);});
 
 	}
 	@Override
