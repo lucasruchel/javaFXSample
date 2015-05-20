@@ -102,7 +102,7 @@ public class ButtonDemoLambda extends Application {
 		bAccept0.setOnMouseExited(this::setEffectNull);
 		
 		bAccept1.addEventHandler(MouseEvent.MOUSE_ENTERED, this::setEffectShadow);
-		bAccept1.setOnMouseExited(e->{bAccept1.setEffect(null);});
+		bAccept1.setOnMouseExited(this::setEffectNull);
 
 	}
 	
